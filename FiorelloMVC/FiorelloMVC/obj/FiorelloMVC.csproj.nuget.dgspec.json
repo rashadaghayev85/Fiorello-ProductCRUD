@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rashad\\OneDrive\\Desktop\\Fiorello-Basket-Paginate\\FiorelloMVC\\FiorelloMVC\\FiorelloMVC.csproj": {}
+    "C:\\Users\\Rashad\\OneDrive\\Desktop\\Fiorello-ProductCRUD\\FiorelloMVC\\FiorelloMVC\\FiorelloMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rashad\\OneDrive\\Desktop\\Fiorello-Basket-Paginate\\FiorelloMVC\\FiorelloMVC\\FiorelloMVC.csproj": {
+    "C:\\Users\\Rashad\\OneDrive\\Desktop\\Fiorello-ProductCRUD\\FiorelloMVC\\FiorelloMVC\\FiorelloMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rashad\\OneDrive\\Desktop\\Fiorello-Basket-Paginate\\FiorelloMVC\\FiorelloMVC\\FiorelloMVC.csproj",
+        "projectUniqueName": "C:\\Users\\Rashad\\OneDrive\\Desktop\\Fiorello-ProductCRUD\\FiorelloMVC\\FiorelloMVC\\FiorelloMVC.csproj",
         "projectName": "FiorelloMVC",
-        "projectPath": "C:\\Users\\Rashad\\OneDrive\\Desktop\\Fiorello-Basket-Paginate\\FiorelloMVC\\FiorelloMVC\\FiorelloMVC.csproj",
+        "projectPath": "C:\\Users\\Rashad\\OneDrive\\Desktop\\Fiorello-ProductCRUD\\FiorelloMVC\\FiorelloMVC\\FiorelloMVC.csproj",
         "packagesPath": "C:\\Users\\Rashad\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rashad\\OneDrive\\Desktop\\Fiorello-Basket-Paginate\\FiorelloMVC\\FiorelloMVC\\obj\\",
+        "outputPath": "C:\\Users\\Rashad\\OneDrive\\Desktop\\Fiorello-ProductCRUD\\FiorelloMVC\\FiorelloMVC\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Rashad\\AppData\\Roaming\\NuGet\\NuGet.Config",

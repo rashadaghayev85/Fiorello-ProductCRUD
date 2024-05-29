@@ -15,8 +15,8 @@ namespace FiorelloMVC.Services.Interfaces
         Task CreateAsync(Product product);  
         Task DeleteAsync(Product product);
         Task EditAsync();
-        Task<ProductImage> GetProductImageByIdAsync(int id);
         Task<Product> GetProductByNameAsync(string name);
+        Task<ProductImage> GetProductImageByIdAsync(int id);
         Task ImageDeleteAsync(ProductImage image);
 
     }

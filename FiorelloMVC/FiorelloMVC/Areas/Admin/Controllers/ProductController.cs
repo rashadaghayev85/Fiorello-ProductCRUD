@@ -6,6 +6,7 @@ using FiorelloMVC.Services.Interfaces;
 using FiorelloMVC.ViewModels.Blog;
 using FiorelloMVC.ViewModels.Product;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration.EnvironmentVariables;
 using System.Collections.Immutable;
@@ -174,7 +175,7 @@ namespace FiorelloMVC.Areas.Admin.Controllers
             {
                 images.Add(new ProductImageVM
                 {
-                    Id=item.Id,
+                    Id = item.Id,
                     Image = item.Name,
                     IsMain = item.IsMain
                 });
@@ -184,8 +185,9 @@ namespace FiorelloMVC.Areas.Admin.Controllers
             {
                 Name = existProduct.Name,
                 Description = existProduct.Description,
-                Price = existProduct.Price.ToString().Replace(",", "."),
-                Images = images
+               // Price = existProduct.Price.ToString().Replace(",", "."),
+                Images = images,
+                CategoryId = existProduct.CategoryId,
             };
 
 
@@ -225,98 +227,114 @@ namespace FiorelloMVC.Areas.Admin.Controllers
             if (products == null) return NotFound();
 
 
-          // if (request.NewImages is null) return RedirectToAction(nameof(Index));
+            if (request.NewImages is not null)
+            {
+
+                List<ProductImage> images = new();
+                foreach (var item in request.NewImages)
+                {
+                    string fileName = $"{Guid.NewGuid()}-{item.FileName}";
+                    string path = _env.GenerateFilePath("img", fileName);
+                    await item.SaveFileToLocalAsync(path);
+                    images.Add(new ProductImage { Name = fileName });
+                }
+
+                foreach (var item in request.NewImages)
+                {
+
+
+                    if (!item.CheckFileType("image/"))
+                    {
+                        ModelState.AddModelError("NewImages", "Input can accept only image format");
+                        products.ProductImages = images;
+                        return View(request);
+
+                    }
+                    if (!item.CheckFileSize(500))
+                    {
+                        ModelState.AddModelError("NewImages", "Image size must be max 500 KB ");
+                        products.ProductImages = images;
+                        return View(request);
+                    }
+
+
+                }
+                foreach (var item in request.NewImages)
+                {
+                    string oldPath = _env.GenerateFilePath("img", item.Name);
+                    oldPath.DeleteFileFromLocal();
+                    string fileName = Guid.NewGuid().ToString() + "-" + item.FileName;
+                    string newPath = _env.GenerateFilePath("img", fileName);
+
+                    await item.SaveFileToLocalAsync(newPath);
+
+
+                   
+
+
+                    products.ProductImages.Add(new ProductImage { Name = fileName });
+
+
+
+
+
+                    //if (request.Price is not null)
+                    //{
+                    //    product.Price = request.Price;
+                    //}
+
+
+
+
+                    //if (fileName is not null)
+                    //{
+                    //    products.ProductImages=images;
+                    //}
+
+                }
+
+            }
+
+            if (request.Name is not null)
+            {
+                products.Name = request.Name;
+            }
+            if (request.Description is not null)
+            {
+                products.Description = request.Description;
+            }
+            if(request.CategoryId !=0)
+            {
+                products.CategoryId = request.CategoryId;   
+            }
+            if (request.Price is not null)
+            {
+                products.Price = decimal.Parse(request.Price);
+            }
 
             //if (!ModelState.IsValid)
             //{
             //    return View();
             //}
 
-            List<ProductImage> images = new();
-            foreach (var item in request.NewImages)
-            {
-                string fileName = $"{Guid.NewGuid()}-{item.FileName}";
-                string path = _env.GenerateFilePath("img", fileName);
-                await item.SaveFileToLocalAsync(path);
-                images.Add(new ProductImage { Name = fileName });
-            }
-           
-
-            foreach (var item in request.NewImages)
-            {
-               
-
-                if (!item.CheckFileType("image/"))
-                {
-                    ModelState.AddModelError("NewImages", "Input can accept only image format");
-                    products.ProductImages=images;
-                    return View(request);
-
-                }
-                if (!item.CheckFileSize(500))
-                {
-                    ModelState.AddModelError("NewImages", "Image size must be max 500 KB ");
-                    products.ProductImages=images;
-                    return View(request);
-                }
-                
-
-            }
-
-            foreach (var item in request.NewImages)
-            {
-                string oldPath = _env.GenerateFilePath("img", item.Name);
-                oldPath.DeleteFileFromLocal();
-                string fileName = Guid.NewGuid().ToString() + "-" + item.FileName;
-                string newPath = _env.GenerateFilePath("img", fileName);
-
-                await item.SaveFileToLocalAsync(newPath);
-
-
-                if (request.Name is not null)
-                {
-                    products.Name = request.Name;
-                }
-                if (request.Description is not null)
-                {
-                    products.Description = request.Description;
-                }
-
-
-                products.ProductImages.Add(new ProductImage { Name = fileName });
-               
-
-                
-
-
-                //if (request.Price is not null)
-                //{
-                //    product.Price = request.Price;
-                //}
 
 
 
 
-                //if (fileName is not null)
-                //{
-                //    products.ProductImages=images;
-                //}
 
-            }
-            
-           
+
             await _productService.EditAsync();
             return RedirectToAction(nameof(Index));
         }
-       
 
-            [HttpPost]
+
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> isMain(int? id)
+        public async Task<IActionResult> IsMain(int? id)
         {
             if (id is null) return BadRequest();
             var productImage = await _productService.GetProductImageByIdAsync((int)id);
-           
+
             if (productImage is null) return NotFound();
 
             //var images=await _productService.GetProductByNameAsync(productName);
@@ -325,24 +343,24 @@ namespace FiorelloMVC.Areas.Admin.Controllers
             //{
             //    item.IsMain = false;
             //}
-            var productID = productImage.ProductId;
+            var productId = productImage.ProductId;
 
-            var pro =await _productService.GetByIdWithAllDatasAsync(productID);
+            var pro = await _productService.GetByIdWithAllDatasAsync(productId);
             foreach (var item in pro.ProductImages)
             {
                 item.IsMain = false;
             }
             productImage.IsMain = true;
 
-           
+
 
             await _productService.EditAsync();
-            return RedirectToAction(nameof(Index));
+            return Redirect($"/admin/product/edit/{productId}");
 
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> imageDelete(int? id)
+        public async Task<IActionResult> ImageDelete(int? id)
         {
             if (id is null) return BadRequest();
             var productImage = await _productService.GetProductImageByIdAsync((int)id);
@@ -361,9 +379,12 @@ namespace FiorelloMVC.Areas.Admin.Controllers
 
             path.DeleteFileFromLocal();
 
+            var productId = productImage.ProductId;
+
+            var pro = await _productService.GetByIdWithAllDatasAsync(productId);
 
             await _productService.ImageDeleteAsync(productImage);
-            return RedirectToAction(nameof(Index));
+            return Redirect($"/admin/product/edit/{productId}");
 
         }
     }

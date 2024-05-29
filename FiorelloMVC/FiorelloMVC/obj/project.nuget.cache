@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oaj0r8DjZtiHQqRz23RGihkQQocEtmOSaUaGLyTmKXzO0wq85sIfbtreCUMfFp+2UsozmYaSprLCgzgnhK3bYA==",
+  "dgSpecHash": "YoD656mIqV1P00avpsPoKByscYEBr45CJGMPmGRvGoD6jWPq26ciqX98sfwBjcjf6jUdccbJmKEJrc4uyWbp7A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Rashad\\OneDrive\\Desktop\\Fiorello-Basket-Paginate\\FiorelloMVC\\FiorelloMVC\\FiorelloMVC.csproj",
+  "projectFilePath": "C:\\Users\\Rashad\\OneDrive\\Desktop\\Fiorello-ProductCRUD\\FiorelloMVC\\FiorelloMVC\\FiorelloMVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Rashad\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Rashad\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

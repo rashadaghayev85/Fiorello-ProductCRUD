@@ -10560,6 +10560,22 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\06582661-140b-4e6d-b1fa-024048103dbb-h3-slider-background.jpg))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\09acbf68-2e37-4a17-af9f-ae8a4b03b21d-h3-background-img.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>FiorelloMVC</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/FiorelloMVC</BasePath>
+      <RelativePath>img/09acbf68-2e37-4a17-af9f-ae8a4b03b21d-h3-background-img.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\09acbf68-2e37-4a17-af9f-ae8a4b03b21d-h3-background-img.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\11e0f648-bc2c-4340-bd58-a85e3bd57791-h3-background-img.jpg))">
       <SourceType>Package</SourceType>
       <SourceId>FiorelloMVC</SourceId>
@@ -10575,6 +10591,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\11e0f648-bc2c-4340-bd58-a85e3bd57791-h3-background-img.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\1273fe40-dc95-41cf-82e5-20a0a4e62714-h3-slider-background.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>FiorelloMVC</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/FiorelloMVC</BasePath>
+      <RelativePath>img/1273fe40-dc95-41cf-82e5-20a0a4e62714-h3-slider-background.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\1273fe40-dc95-41cf-82e5-20a0a4e62714-h3-slider-background.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\180579fe-f310-4b2d-a5a6-25cb2b76d09a-cfb31cbf-eb69-47d4-8b2a-9d9e6c73862a-WhatsApp Image 2023-12-05 at 22.29.49.jpeg))">
       <SourceType>Package</SourceType>
@@ -10655,6 +10687,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\467fa5c2-d106-4791-b844-849fd2de3431-h3-slider-background-3.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\552d7fd3-e1e0-4751-905f-dfea84303890-h3-slider-background-2.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>FiorelloMVC</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/FiorelloMVC</BasePath>
+      <RelativePath>img/552d7fd3-e1e0-4751-905f-dfea84303890-h3-slider-background-2.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\552d7fd3-e1e0-4751-905f-dfea84303890-h3-slider-background-2.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\56e6c903-401c-4097-b5d0-725b9db49a17-h3-background-img.jpg))">
       <SourceType>Package</SourceType>
@@ -10991,6 +11039,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\blog-feature-img-4.jpg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\c42064e9-0b54-40e4-812d-eb52fb6b1193-h3-slider-background-3.jpg))">
+      <SourceType>Package</SourceType>
+      <SourceId>FiorelloMVC</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/FiorelloMVC</BasePath>
+      <RelativePath>img/c42064e9-0b54-40e4-812d-eb52fb6b1193-h3-slider-background-3.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\c42064e9-0b54-40e4-812d-eb52fb6b1193-h3-slider-background-3.jpg))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\c834a663-f094-49b1-b691-c06acce12f48-h3-background-img.jpg))">
       <SourceType>Package</SourceType>
