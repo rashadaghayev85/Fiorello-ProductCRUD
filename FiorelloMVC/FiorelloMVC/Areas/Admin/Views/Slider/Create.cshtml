@@ -1,0 +1,19 @@
+﻿@model SliderCreateVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+    <form method="post" asp-action="Create" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="category">Slider</label>
+            @* inputun attributuuna accept="image/*"(* yerine png falanda yazmaq olur) versek yalniz image qebul edecek *@
+           @* multiple atributu ile bir nece sekil secmek olur *@
+            <input class="form-control form-bg-light" asp-for=Images maxlength="100" placeholder="Category...">
+            <span asp-validation-for="Images"  class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light mr-2">Cancel</a>
+    </form>
+</div>
+

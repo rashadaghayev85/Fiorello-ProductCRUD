@@ -1,0 +1,21 @@
+﻿@model SliderEditVM
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<div class="container mt-5">
+    <img src="~/img/@Model.Image"style="witdh:200px;height:200px;"/>
+    <form method="post" asp-action="Edit" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="category">Slider</label>
+            @* inputun attributuuna accept="image/*"(* yerine png falanda yazmaq olur) versek yalniz image qebul edecek *@
+            <input class="form-control form-bg-light" asp-for=NewImage maxlength="100" placeholder="Category...">
+            <span asp-validation-for="NewImage" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light mr-2">Cancel</a>
+    </form>
+</div>
+
+

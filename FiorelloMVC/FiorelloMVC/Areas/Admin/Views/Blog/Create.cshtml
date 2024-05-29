@@ -1,0 +1,22 @@
+﻿@model BlogCreateVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container mt-5">
+    <form method="post" asp-action="Create" enctype="multipart/form-data">
+        <div class="form-group">
+            <label for="category">Image</label>
+            <span asp-validation-for="Image" class="text-danger"></span>
+            <input class="form-control form-bg-light" type="file" asp-for="Image" maxlength="100" placeholder="Category...">
+            <label class="mt-5" for="category">Title</label>
+            <span asp-validation-for="Title" class="text-danger"></span>
+            <input asp-for="Title" class="form-control form-bg-light" maxlength="100" placeholder="Title...">
+            <label class="mt-5" for="category">Description</label>
+            <span asp-validation-for="Description" class="text-danger"></span>
+            <input asp-for="Description" class="form-control form-bg-light" maxlength="100" placeholder="Description...">
+        </div>
+        <button type="submit" class="btn btn-primary mr-2">Submit</button>
+        <a asp-action="Index" class="btn btn-light mr-2">Cancel</a>
+    </form>
+</div>
